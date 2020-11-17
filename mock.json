@@ -1,0 +1,62 @@
+[
+  {
+    "image_url": "img/placeholders/adequan.jpg",
+    "product_name": "Adequan",
+    "price": "$68.05"
+  },
+  {
+    "image_url": "img/placeholders/bonies.jpg",
+    "product_name": "Bonies",
+    "price": "$6.99"
+  },
+  {
+    "image_url": "img/placeholders/bravecto.jpg",
+    "product_name": "Bravecto",
+    "price": "$7.99"
+  },
+  {
+    "image_url": "img/placeholders/cardiomax.jpg",
+    "product_name": "Cardio Max",
+    "price": "$19.99"
+  },
+  {
+    "image_url": "img/placeholders/carprieve.jpg",
+    "product_name": "Carprieve(Carprofen)",
+    "price": "$10.95"
+  },
+  {
+    "image_url": "img/placeholders/denestra.jpg",
+    "product_name": "Denestra",
+    "price": "$41.59"
+  },
+  {
+    "image_url": "img/placeholders/hylox.jpg",
+    "product_name": "Hylox",
+    "price": "$10.55"
+  },
+  {
+    "image_url": "img/placeholders/drmartys.jpg",
+    "product_name": "Dr. Martys Dog Food",
+    "price": "$31.99"
+  },
+  {
+    "image_url": "img/placeholders/jointmax.jpg",
+    "product_name": "Joint Max Triple Strength",
+    "price": "$65.99"
+  },
+  {
+    "image_url": "img/placeholders/omegacaps.jpg",
+    "product_name": "Omega Caps",
+    "price": "$49.99"
+  },
+  {
+    "image_url": "img/placeholders/vetmedin.jpg",
+    "product_name": "Vetmedin",
+    "price": "$69.89"
+  },
+  {
+    "image_url": "img/placeholders/amoxi.jpg",
+    "product_name": "Amoxicillin",
+    "price": "$8.99"
+  }
+]
