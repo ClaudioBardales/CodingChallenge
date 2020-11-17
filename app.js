@@ -10,8 +10,6 @@ async function getItems() {
   }
 }
 
-console.log(getItems());
-
 async function renderItems() {
   let items = await getItems();
   let html = '';
