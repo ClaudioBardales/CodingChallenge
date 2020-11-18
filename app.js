@@ -1,10 +1,12 @@
 const filterBtns = document.querySelectorAll('.filter-btn');
 const searchBar = document.querySelector('.input');
 const container = document.querySelector('.card-section');
+const dropdown = document.getElementById("categories");
+const date = document.getElementById('date');
 let item = [];
 
-// Filter Through Search Bar
 
+// Filter Through Search Bar
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value;
   const filteredItems = item.filter((item) => {
@@ -29,9 +31,9 @@ const getItems = async () => {
   }
 };
 
-const renderItems = (item) => {
+const renderItems = item => {
   const htmlString = item
-    .map((item) => {
+    .map(item => {
       return ` <div class="card">
                   <img src="${item.image_url}" alt="placeholder">
                 <div class="descriptions">
@@ -48,9 +50,9 @@ const renderItems = (item) => {
 
 getItems();
 
-// Filter Medication and OTC Buttons
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
+// Filter Medication, Reset, and OTC Buttons
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', e => {
     const category = e.currentTarget.dataset.id;
     const itemCategory = item.filter(itemCategory => {
       if (itemCategory.category === category) {
@@ -64,3 +66,15 @@ filterBtns.forEach((btn) => {
     }
   });
 });
+
+
+// Live Date
+date.innerHTML = new Date().getFullYear();
+
+
+
+
+
+
+
+
