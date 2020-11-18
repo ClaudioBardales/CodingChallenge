@@ -1,37 +1,66 @@
+const filterBtns = document.querySelectorAll('.filter-btn');
+const searchBar = document.querySelector('.input');
+const container = document.querySelector('.card-section');
+let item = [];
+
+// Filter Through Search Bar
+
+searchBar.addEventListener('keyup', (e) => {
+  const searchString = e.target.value;
+  const filteredItems = item.filter((item) => {
+    return (
+      item.product_name.toLowerCase().includes(searchString) ||
+      item.category.toLowerCase().includes(searchString)
+    );
+  });
+  renderItems(filteredItems);
+});
+
 // FETCH ITEMS
 
-async function getItems() {
+const getItems = async () => {
   let url = 'mock.json';
   try {
-    let res = await fetch(url);
-    return await res.json();
-  } catch (error) {
-    console.log(error);
+    const res = await fetch(url);
+    item = await res.json();
+    renderItems(item);
+  } catch (err) {
+    console.error(err);
   }
-}
+};
 
-async function renderItems() {
-  let items = await getItems();
-  let html = '';
-  items.forEach(item => {
-    let htmlSegment = ` <div class="card">
-                        <img src="${item.image_url}" alt="placeholder">
-                        <div class="descriptions">
-                        <p>${item.product_name}</p>
-                        <button>${item.price}</button>
-                        </div>
-                        </div>
-                        `;
-    html += htmlSegment;
+const renderItems = (item) => {
+  const htmlString = item
+    .map((item) => {
+      return ` <div class="card">
+                  <img src="${item.image_url}" alt="placeholder">
+                <div class="descriptions">
+                  <p>${item.product_name}</p>
+                  <button>${item.price}</button>
+                </div>
+                </div>
+    `;
+    })
+    .join('');
+
+  container.innerHTML = htmlString;
+};
+
+getItems();
+
+// Filter Medication and OTC Buttons
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const category = e.currentTarget.dataset.id;
+    const itemCategory = item.filter(itemCategory => {
+      if (itemCategory.category === category) {
+        return itemCategory;
+      }
+    });
+    if (category === 'reset') {
+      renderItems(item);
+    } else {
+      renderItems(itemCategory);
+    }
   });
-
-    let container = document.querySelector('.card-section');
-    container.innerHTML = html;
-
-    console.log(container);
-}
-
-renderItems();
-
-
-
+});

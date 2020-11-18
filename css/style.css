@@ -89,7 +89,7 @@ nav .shopping-cart:hover {
 
 .banner img {
   width: 100%;
-  height: auto;
+  margin: auto;
   -webkit-box-shadow: 0 3px 2px #777;
   -moz-box-shadow: 0 3px 2px #777;
   box-shadow: 0 3px 2px #777;
