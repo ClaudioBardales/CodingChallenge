@@ -7,9 +7,9 @@ let item = [];
 
 
 // Filter Through Search Bar
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value;
-  const filteredItems = item.filter((item) => {
+searchBar.addEventListener('keyup', e => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredItems = item.filter(item => {
     return (
       item.product_name.toLowerCase().includes(searchString) ||
       item.category.toLowerCase().includes(searchString)
