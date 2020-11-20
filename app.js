@@ -1,9 +1,12 @@
 const filterBtns = document.querySelectorAll('.filter-btn');
 const searchBar = document.querySelector('.input');
 const container = document.querySelector('.card-section');
-const dropdown = document.getElementById("categories");
+const dropdown = document.querySelector('#categories');
+const sort = document.querySelector('#sort');
 const date = document.getElementById('date');
 let item = [];
+
+console.log(dropdown);
 
 
 // Filter Through Search Bar
@@ -67,6 +70,27 @@ filterBtns.forEach(btn => {
   });
 });
 
+// Filter With Dropdown
+
+dropdown.addEventListener('change', () =>{
+  console.log(dropdown);
+})
+
+// Sort with Dropdown
+sort.addEventListener('change', () => {
+    const sortItems = item => {
+    if(item.value === value.price){
+      item.sort((a, b) => {
+        return a.price - b.price
+      })
+    }  
+}
+// console.log(sortItems(item));
+console.log(sort);
+})
+
+
+  
 
 // Live Date
 date.innerHTML = new Date().getFullYear();
