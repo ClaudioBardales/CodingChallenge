@@ -2,9 +2,14 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const searchBar = document.querySelector('.input');
 const container = document.querySelector('.card-section');
 const dropdown = document.querySelector('#categories');
+const sortDropdown = document.querySelectorAll('#sort');
 const date = document.getElementById('date');
 const select = document.querySelectorAll('.filter-select');
 let item = [];
+
+console.log(sort);
+
+
 
 // Filter Through Search Bar
 searchBar.addEventListener('keyup', e => {
@@ -84,7 +89,26 @@ select.forEach(select => {
     }
   })
   
-})
+});
+
+sortDropdown.forEach(sort => {
+  sort.addEventListener('change', e => {
+    const sortPrice = e.currentTarget.value;
+    console.log(sortPrice);
+    if(sortPrice === 'high') {
+      sortProductsPriceAscending();
+    } else if (sortPrice === 'low'){
+      sortProductsPriceDecending();
+    }
+  });
+  const sortProductsPriceAscending = () => {
+    item.sort((a,b) => {return a.price - b.price});
+  }
+  const sortProductsPriceDecending = () => {
+    item.sort((b,a) => {return b.price - a.price});
+  }
+});
+
 
 
 
