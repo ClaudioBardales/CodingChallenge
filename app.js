@@ -7,9 +7,6 @@ const date = document.getElementById('date');
 const select = document.querySelectorAll('.filter-select');
 let item = [];
 
-console.log(sort);
-
-
 
 // Filter Through Search Bar
 searchBar.addEventListener('keyup', e => {
@@ -43,7 +40,7 @@ const renderItems = item => {
                   <img src="${item.image_url}" alt="placeholder">
                 <div class="descriptions">
                   <p>${item.product_name}</p>
-                  <button>${item.price}</button>
+                  <button>$${item.price}</button>
                 </div>
                 </div>
     `;
@@ -91,23 +88,31 @@ select.forEach(select => {
   
 });
 
+
 sortDropdown.forEach(sort => {
   sort.addEventListener('change', e => {
     const sortPrice = e.currentTarget.value;
-    console.log(sortPrice);
     if(sortPrice === 'high') {
       sortProductsPriceAscending();
     } else if (sortPrice === 'low'){
       sortProductsPriceDecending();
     }
   });
-  const sortProductsPriceAscending = () => {
-    item.sort((a,b) => {return a.price - b.price});
-  }
-  const sortProductsPriceDecending = () => {
-    item.sort((b,a) => {return b.price - a.price});
-  }
 });
+
+const sortProductsPriceAscending = () => {
+  item.sort((a, b) => a.price - b.price);
+}
+
+const sortProductsPriceDecending = () => {
+  item.sort((b, a) => b.price - a.price);
+}
+
+
+
+
+
+
 
 
 
