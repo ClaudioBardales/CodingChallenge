@@ -218,7 +218,7 @@ footer {
 
 /* Mobile Styles */
 
-@media (max-width: 1106px) {
+@media (max-width: 69.125rem) {
   nav .search {
     display: none;
   }
@@ -238,5 +238,11 @@ footer {
 
   .filter-section {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 29.75rem){
+  .card-section {
+    grid-template-columns: 1fr;
   }
 }

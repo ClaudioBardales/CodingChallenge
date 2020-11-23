@@ -3,72 +3,72 @@
     "image_url": "img/placeholders/adequan.jpg",
     "product_name": "Adequan",
     "category": "medicine",
-    "price": 68
+    "price": 68.99
   },
   {
     "image_url": "img/placeholders/bonies.jpg",
     "product_name": "Bonies",
     "category": "otc",
-    "price": 6
+    "price": 6.99
   },
   {
     "image_url": "img/placeholders/bravecto.jpg",
     "product_name": "Bravecto",
     "category": "medicine",
-    "price": 7
+    "price": 7.99
   },
   {
     "image_url": "img/placeholders/cardiomax.jpg",
     "product_name": "Cardio Max",
     "category": "otc",
-    "price": 20
+    "price": 20.99
   },
   {
     "image_url": "img/placeholders/carprieve.jpg",
     "product_name": "Carprieve(Carprofen)",
     "category": "medicine",
-    "price": 1
+    "price": 1.99
   },
   {
     "image_url": "img/placeholders/denestra.jpg",
     "product_name": "Denestra",
     "category": "otc",
-    "price": 41
+    "price": 41.99
   },
   {
     "image_url": "img/placeholders/hylox.jpg",
     "product_name": "Hylox",
     "category": "otc",
-    "price": 10
+    "price": 10.99
   },
   {
     "image_url": "img/placeholders/drmartys.jpg",
     "product_name": "Dr. Martys Dog Food",
     "category": "otc",
-    "price": 31
+    "price": 31.99
   },
   {
     "image_url": "img/placeholders/jointmax.jpg",
     "product_name": "Joint Max Triple Strength",
     "category": "otc",
-    "price": 65
+    "price": 65.99
   },
   {
     "image_url": "img/placeholders/omegacaps.jpg",
     "product_name": "Omega Caps",
     "category": "otc",
-    "price": 49
+    "price": 49.99
   },
   {
     "image_url": "img/placeholders/vetmedin.jpg",
     "product_name": "Vetmedin",
     "category": "medicine",
-    "price": 69
+    "price": 69.99
   },
   {
     "image_url": "img/placeholders/amoxi.jpg",
     "product_name": "Amoxicillin",
     "category": "medicine",
-    "price": 8
+    "price": 8.99
   }
 ]
