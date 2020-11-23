@@ -171,6 +171,7 @@ nav .shopping-cart:hover {
 
 .card {
   width: 100%;
+  margin: auto;
   padding: 1rem;
   -webkit-box-shadow: 0 3px 2px #777;
   -moz-box-shadow: 0 3px 2px #777;
@@ -178,31 +179,59 @@ nav .shopping-cart:hover {
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  
+  display: block;
+  margin: auto;
+  width: 70%; 
 }
 
 .card .descriptions {
-  width: 100%;
+  width: 70%;
+  margin: auto;
   display: flex;
-  text-align: center;
+  align-items: left;
   flex-direction: column;
   justify-content: center;
 }
 
-.card .descriptions p {
-  margin: 0.5rem;
+.discount-ad{
+  width: 70%;
+  font-weight: 300;
+  color: white;
+  margin: auto;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color:#128ced;
+  padding: 2.5px;
 }
 
-.card .descriptions button {
-  margin-top: 10px;
-  padding: 0.5rem;
-  width: 60%;
+.rating{
+  width: 70%;
   margin: auto;
-  border: none;
-  background-color: #ee6825;
-  color: #fff;
+}
+
+.rating i{
+  color: #ffa41d;  
+}
+
+
+.card .descriptions p {
+  margin: 0.25rem;
+  font-weight: 600;
+}
+
+.card .descriptions :nth-child(2) {
+  color: green;
+  font-weight: 600;
+}
+
+.free-shipping{
+  width: 70%;
+  margin: auto;
+}
+
+.free-shipping p {
+  font-size: 12px;
+  font-weight: 300;
 }
 
 footer {

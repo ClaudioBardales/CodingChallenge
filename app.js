@@ -50,7 +50,20 @@ const renderItems = item => {
                   <img src="${item.image_url}" alt="placeholder">
                 <div class="descriptions">
                   <p>${item.product_name}</p>
-                  <button>$${item.price}</button>
+                  <p>$${item.price}</p>
+                </div>
+                <div class="discount-ad">
+                <p>Use EPX15 for 15% off</p>
+                </div>
+                <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                </div>
+                <div class="free-shipping">
+                <p>Free Shipping over 49$</p>
                 </div>
                 </div>
     `;
