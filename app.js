@@ -1,5 +1,5 @@
 const filterBtns = document.querySelectorAll('.filter-btn');
-const searchBar = document.querySelector('.input')
+const searchBar = document.querySelector('.input');
 const dropdown = document.querySelector('#categories');
 const sortDropdown = document.querySelectorAll('#sort');
 const date = document.getElementById('date');
@@ -44,8 +44,9 @@ sortDropdown.forEach((sort) => {
   });
 });
 
-const renderItems = item => {
-  const htmlString = item.map((item) => {
+const renderItems = (item) => {
+  const htmlString = item
+    .map((item) => {
       return ` <div class="card">
                   <img src="${item.image_url}" alt="placeholder">
                 <div class="descriptions">
@@ -109,11 +110,6 @@ select.forEach((select) => {
     }
   });
 });
-
-
-
-
-
 
 // Live Date
 date.innerHTML = new Date().getFullYear();
