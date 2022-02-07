@@ -3,72 +3,96 @@
     "image_url": "img/placeholders/adequan.jpg",
     "product_name": "Adequan Canine (100mg/5ml)",
     "category": "medicine",
-    "price": 68.99
+    "price": 68.99,
+    "id": 0,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/bonies.jpg",
     "product_name": "Bonies Hip & Joint MINI (20 Bones)",
     "category": "otc",
-    "price": 6.99
+    "price": 6.99,
+    "id": 1,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/bravecto.jpg",
     "product_name": "Bravecto 3 Months (1 Chew)",
     "category": "medicine",
-    "price": 7.99
+    "price": 7.99,
+    "id": 2,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/cardiomax.jpg",
     "product_name": "Cardio Max Soft Chews (120 Chews)",
     "category": "otc",
-    "price": 20.99
+    "price": 20.99,
+    "id": 3,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/carprieve.jpg",
     "product_name": "Carprieve(Carprofen)",
     "category": "medicine",
-    "price": 1.99
+    "price": 1.99,
+    "id": 4,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/denestra.jpg",
     "product_name": "Denestra 60mg (60 Tablets)",
     "category": "otc",
-    "price": 41.99
+    "price": 41.99,
+    "id": 5,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/hylox.jpg",
     "product_name": "Hylox Soft Chews (60 Soft Chews)",
     "category": "otc",
-    "price": 10.99
+    "price": 10.99,
+    "id": 6,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/drmartys.jpg",
     "product_name": "Dr. Martys Dog Food (16 oz)",
     "category": "otc",
-    "price": 31.99
+    "price": 31.99,
+    "id": 7,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/jointmax.jpg",
     "product_name": "Joint Max Triple Strength Soft Chews (120 Chews)",
     "category": "otc",
-    "price": 65.99
+    "price": 65.99,
+    "id": 8,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/omegacaps.jpg",
     "product_name": "Omega Caps (200 Capsules)",
     "category": "otc",
-    "price": 49.99
+    "price": 49.99,
+    "id": 9,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/vetmedin.jpg",
     "product_name": "Vetmedin 5mg (50 Capsules)",
     "category": "medicine",
-    "price": 69.99
+    "price": 69.99,
+    "id": 10,
+    "count": 1
   },
   {
     "image_url": "img/placeholders/amoxi.jpg",
     "product_name": "Amoxicillin 250mg (30 Capsules)",
     "category": "medicine",
-    "price": 8.99
+    "price": 8.99,
+    "id": 11,
+    "count": 1
   }
 ]

@@ -4,6 +4,17 @@ const dropdown = document.querySelector('#categories');
 const sortDropdown = document.querySelectorAll('#sort');
 const date = document.getElementById('date');
 const select = document.querySelectorAll('.filter-select');
+
+//Shopping Cart Variables
+const plus = document.querySelectorAll('.plus');
+const minus = document.querySelectorAll('.minus');
+const counter = document.querySelectorAll('.qty p');
+const itemTotal = document.querySelectorAll('.item-total');
+const total = document.querySelectorAll('.total span');
+const cartContainer = document.querySelector('.shooping-cart');
+
+console.log(cartContainer);
+
 let item = [];
 
 // Filter Through Search Bar
@@ -56,6 +67,7 @@ const renderItems = (item) => {
                 <div class="discount-ad">
                 <p>Use EPX15 for 15% off</p>
                 </div>
+                <button class="add-to-cart" onclick="addToCart(${item.id})">Add To Cart</button>
                 <div class="rating">
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
@@ -110,6 +122,50 @@ select.forEach((select) => {
     }
   });
 });
+
+// Display Item in Shopping Cart
+let cart = [];
+
+const addToCart = (id) => {
+  if (cart.some((item) => item.id === id)) {
+    alert('Product Already in Cart!');
+  } else {
+    const cartItem = item.find((item) => item.id === id);
+    cart.push({
+      ...cartItem,
+      numberOfUnits: 1,
+    });
+
+    updateCart();
+  }
+};
+
+// Update Cart
+
+const updateCart = () => {
+  renderCartItems();
+  // renderSubtotal();
+};
+
+// Render Cart Items
+
+const renderCartItems = () => {
+  cart.forEach((item) => {
+    cartContainer.innerHTML += `
+     <div class="item">
+     <img src="${item.image_url}" alt="${item.product_name}" width="150" height="150"/>
+     <h2>${item.product_name}</h2>
+     <p>$${item.price}</p>
+     <div class="qty">
+       <i class="fas fa-plus plus"></i>
+       <p>${item.numberOfUnits}</p>
+       <i class="fas fa-minus minus"></i>
+     </div>
+     <i class="fas fa-times times"></i>
+   </div>
+`;
+  });
+};
 
 // Live Date
 date.innerHTML = new Date().getFullYear();

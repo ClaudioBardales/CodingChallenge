@@ -221,6 +221,27 @@ nav .shopping-cart:hover {
   font-weight: 600;
 }
 
+.add-to-cart {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: #fba613;
+  margin-top: 3px;
+  color: white;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #f96813;
+  transition: all 0.5s ease;
+}
+
 .free-shipping {
   width: 70%;
   margin: auto;
