@@ -6,14 +6,9 @@ const date = document.getElementById('date');
 const select = document.querySelectorAll('.filter-select');
 
 //Shopping Cart Variables
-const plus = document.querySelectorAll('.plus');
-const minus = document.querySelectorAll('.minus');
-const counter = document.querySelectorAll('.qty p');
-const itemTotal = document.querySelectorAll('.item-total');
-const total = document.querySelectorAll('.total span');
-const cartContainer = document.querySelector('.shooping-cart');
-
-console.log(cartContainer);
+const total = document.querySelector('.total span');
+const cartContainer = document.querySelector('.cart');
+const itemCount = document.querySelector('.item-count');
 
 let item = [];
 
@@ -124,48 +119,89 @@ select.forEach((select) => {
 });
 
 // Display Item in Shopping Cart
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('CART')) || [];
 
 const addToCart = (id) => {
   if (cart.some((item) => item.id === id)) {
-    alert('Product Already in Cart!');
+    changeNumberOfUnits('plus', id);
   } else {
     const cartItem = item.find((item) => item.id === id);
     cart.push({
       ...cartItem,
       numberOfUnits: 1,
     });
-
-    updateCart();
   }
+  updateCart();
 };
 
 // Update Cart
 
 const updateCart = () => {
   renderCartItems();
-  // renderSubtotal();
+  renderTotal();
+
+  localStorage.setItem('CART', JSON.stringify(cart));
+};
+
+const renderTotal = () => {
+  let totalPrice = 0;
+  let totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += item.price * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+  total.innerHTML = `$${totalPrice.toFixed(2)}`;
+  itemCount.innerHTML = totalItems;
 };
 
 // Render Cart Items
 
 const renderCartItems = () => {
+  cartContainer.innerHTML = '';
   cart.forEach((item) => {
     cartContainer.innerHTML += `
      <div class="item">
-     <img src="${item.image_url}" alt="${item.product_name}" width="150" height="150"/>
+     <img src="${item.image_url}" alt="${item.product_name}" width="75" height="75"/>
      <h2>${item.product_name}</h2>
      <p>$${item.price}</p>
      <div class="qty">
-       <i class="fas fa-plus plus"></i>
+       <i class="fas fa-plus plus" onclick="changeNumberOfUnits('plus', ${item.id})"></i>
        <p>${item.numberOfUnits}</p>
-       <i class="fas fa-minus minus"></i>
+       <i class="fas fa-minus minus" onclick="changeNumberOfUnits('minus', ${item.id})"></i>
      </div>
-     <i class="fas fa-times times"></i>
+     <i class="fas fa-times times" onclick="removeItem(${item.id})"></i>
    </div>
 `;
   });
 };
+
+const removeItem = (id) => {
+  cart = cart.filter((item) => item.id !== id);
+  updateCart();
+};
+
+const changeNumberOfUnits = (action, id) => {
+  cart = cart.map((item) => {
+    let numberOfUnits = item.numberOfUnits;
+
+    if (item.id === id) {
+      if (action === 'plus') {
+        numberOfUnits++;
+      } else if (action === 'minus' && numberOfUnits > 1) {
+        numberOfUnits--;
+      }
+
+      return {
+        ...item,
+        numberOfUnits,
+      };
+    }
+  });
+  updateCart();
+};
+
+updateCart();
 
 // Live Date
 date.innerHTML = new Date().getFullYear();
