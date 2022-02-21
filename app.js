@@ -4,11 +4,15 @@ const dropdown = document.querySelector('#categories');
 const sortDropdown = document.querySelectorAll('#sort');
 const date = document.getElementById('date');
 const select = document.querySelectorAll('.filter-select');
+const menuIcon = document.querySelector('.shopping-menu');
 
 //Shopping Cart Variables
+const shoppingCart = document.querySelector('.shopping-cart');
 const total = document.querySelector('.total span');
 const cartContainer = document.querySelector('.cart');
 const itemCount = document.querySelector('.item-count');
+
+console.log(shoppingCart);
 
 let item = [];
 
@@ -202,6 +206,10 @@ const changeNumberOfUnits = (action, id) => {
 };
 
 updateCart();
+
+menuIcon.addEventListener('click', () => {
+  shoppingCart.classList.toggle('active');
+});
 
 // Live Date
 date.innerHTML = new Date().getFullYear();

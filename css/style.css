@@ -313,7 +313,11 @@ footer {
   display: none;
 }
 
-.shopping-cart {
+.shopping-cart-icon {
+  cursor: pointer;
+}
+
+.active {
   display: block;
   background-color: white;
   position: absolute;
