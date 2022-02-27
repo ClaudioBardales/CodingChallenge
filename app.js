@@ -12,8 +12,6 @@ const total = document.querySelector('.total span');
 const cartContainer = document.querySelector('.cart');
 const itemCount = document.querySelector('.item-count');
 
-console.log(shoppingCart);
-
 let item = [];
 
 // Filter Through Search Bar
@@ -188,19 +186,18 @@ const removeItem = (id) => {
 const changeNumberOfUnits = (action, id) => {
   cart = cart.map((item) => {
     let numberOfUnits = item.numberOfUnits;
-
     if (item.id === id) {
-      if (action === 'plus') {
+      if (action === 'plus' && numberOfUnits < item.instock) {
         numberOfUnits++;
       } else if (action === 'minus' && numberOfUnits > 1) {
         numberOfUnits--;
       }
-
-      return {
-        ...item,
-        numberOfUnits,
-      };
     }
+
+    return {
+      ...item,
+      numberOfUnits,
+    };
   });
   updateCart();
 };
